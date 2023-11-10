@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-    <div data-testid="title">App</div>
+    <div data-testid="title">App para pelis</div>
     </>
   )
 }

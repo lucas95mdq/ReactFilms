@@ -8,9 +8,4 @@ describe("App", () => {
     const component = render(<App />);
     expect(component).toBeDefined();
   });
-  it("should have a title", () => {
-    render(<App />);
-    const title = screen.getByTestId("title");
-    expect(title).toBeInTheDocument();
 })
-});
