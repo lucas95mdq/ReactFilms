@@ -6,9 +6,10 @@ const AuthProvider = ({children}) => {
     const [user, setuser] = useState({});
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const login = () => {
+    const login = async () => {
+    
         setIsLoggedIn(true);
-    }
+      };
 
     const logout = () => {
         setIsLoggedIn(false);

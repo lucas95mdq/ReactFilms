@@ -1,9 +1,10 @@
 import React from 'react'
+import AppButton from '../button/AppButton'
 
 const Sercher = () => {
 
     const handleSubmit = (e) => {
-        e.preventdefault()
+        e.preventDefault();
     }
 
     return (
@@ -11,7 +12,9 @@ const Sercher = () => {
     <div>
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder='buscar'></input>
-            <button type='submit'></button>
+            <AppButton type={"submit"}>
+                Buscar
+            </AppButton>
         </form>
     </div>
   )
