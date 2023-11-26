@@ -22,8 +22,8 @@ const SwiperContainer = ({title, data}) => {
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
-            }}
-            onClick={()=>{navigate(`/${e.id}`)}}>
+                }}
+               onClick={()=>{navigate(`/${e.id}`)}}>
                 <SwiperCard title={e.title}  >
                 </SwiperCard>
               </div>
