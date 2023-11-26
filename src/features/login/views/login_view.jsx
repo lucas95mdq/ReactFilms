@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuth } from '../../../core/auth/hook/use_auth'
 import AppButton from '../../Components/button/AppButton';
 import Loading from '../../Components/loading/Loading';
+import Footer from '../../Components/footer/Footer';
 
 
 const LoginView = () => {
@@ -32,12 +33,17 @@ const LoginView = () => {
   return (
       <>
     <form onSubmit={handleSubmit}>
+      <h1>Iniciar Sesion</h1>
+      <label>Email</label>
       <input type="email" name="email" />
+      <label>Contraseña</label>
       <input type="password" name="password" />
       <AppButton type={"submit"} onClick={login}>Iniciar Sesion</AppButton>
       <p>{error}</p>
     </form>
     {isLoading ? <Loading></Loading>: null}
+
+    <Footer/>
       </>
 
   )

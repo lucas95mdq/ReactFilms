@@ -25,7 +25,7 @@ const HomeView = () => {
 
   return (
     <div>
-        <Sercher/>  
+      <Header/>
         {popularMovies ? <BannerContainer data={popularMovies}></BannerContainer> : null}
         <SwiperContainer title={"MAS POPULARES"} data={popularMovies}/>
         <SwiperContainer title={"MEJOR RANKEADAS"} data={topRatedMovies}/>
