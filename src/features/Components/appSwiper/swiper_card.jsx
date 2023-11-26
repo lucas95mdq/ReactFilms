@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SwiperCard = ({title, image, }) => {
+const SwiperCard = ({title}, ...props ) => {
   return (
     <div>
-        <img src={image} alt={title}></img>
+        <h3 {...props}>{title}</h3>
     </div>
   )
 }

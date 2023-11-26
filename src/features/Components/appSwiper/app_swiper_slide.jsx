@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AppSwiperSlide = ({children}, ...props) => {
+const AppSwiperSlide = ({children}) => {
   return (
-    <swiper-slide {...props}>{children}</swiper-slide>
+    <swiper-slide>{children}</swiper-slide>
   )
 }
 
