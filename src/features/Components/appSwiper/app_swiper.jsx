@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 
-export const AppSwiper = ({children}) => {
+const AppSwiper = ({children}) => {
   const swiperElRef = useRef(null);
 
   return (
@@ -15,3 +15,5 @@ export const AppSwiper = ({children}) => {
     </swiper-container>
   );
 };
+
+export default AppSwiper;

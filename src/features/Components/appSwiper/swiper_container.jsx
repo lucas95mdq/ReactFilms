@@ -1,9 +1,9 @@
 import React from 'react'
 import SwiperTitle from './swipper_title'
-import { AppSwiper } from './app_Swiper'
 import AppSwiperSlide from './app_swiper_slide'
 import SwiperCard from './swiper_card'
 import { useNavigate } from 'react-router-dom'
+import AppSwiper from './app_Swiper'
 
 const SwiperContainer = ({title, data}) => {
 
