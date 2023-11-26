@@ -3,6 +3,7 @@ import { tmdb_paths } from "../../../../core/datasource/tmdb/tmdb_api"
 export const tmdbMoviesAdapter = (response) => {
     const {results} = response
 
+
     return (results.map((item) => ({
         id: item.id,
         title: item.title || item.name,

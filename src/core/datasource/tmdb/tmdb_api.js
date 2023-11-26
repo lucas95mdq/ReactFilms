@@ -18,6 +18,9 @@ export const tmdb_paths = {
       upcoming: "/movie/upcoming",
       nowPlaying: "/movie/now_playing",
     },
+    movie: {
+      id: "/movie/"
+    },
     tv: {
       popular: "/tv/popular",
       top_rated: "/tv/top_rated",
@@ -44,6 +47,5 @@ export const tmdb_paths = {
           original: "/original",
         },
         url: "https://image.tmdb.org/t/p",
-      },
     },
-  };
+  }};
