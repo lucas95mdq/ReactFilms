@@ -18,11 +18,7 @@ const LoginView = () => {
     setIsLoading(true);
     try {
       const form = e.target;
-      const formData = new FormData(form);
-      const { email, password } = Object.fromEntries(formData);
-
       form.reset();
-
       await login();
     } catch (error) {
       setError(error.response.data.msg);

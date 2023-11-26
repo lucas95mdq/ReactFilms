@@ -7,8 +7,8 @@ import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '../servi
 import useSwr from 'swr';
 import { getAiringTodaygTv, getPopularTv, getTopRatedTv } from '../services/tv_services';
 import BannerContainer from '../../Components/banner/banner_container';
-
-
+import { getMovieDetails } from '../../movie/services/movie_detail_services';
+import { useParams } from 'react-router-dom';
 
 
 
