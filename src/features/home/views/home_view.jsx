@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../Components/header/Header';
 import Footer from '../../Components/footer/Footer';
 import SwiperContainer from '../../Components/appSwiper/swiper_container';
@@ -10,19 +10,18 @@ import SwiperError from '../../Components/appSwiper/swiper_error';
 import SwiperSkeleton from '../../Components/appSwiper/swiper_skeleton';
 import BannerError from '../../Components/banner/banner_error';
 import BannerSkeleton from '../../Components/banner/banner_skeleton';
-import SwiperAdapter from '../componente/swiper_adapter';
 
 
 
 const HomeView = () => {
 
-  
-  const {data: popularMovies, error: popularMoviesError, isLoading: popularMoviesIsLoading } = useSwr('getPopularMovies', getPopularMovies);
-  const {data: topRatedMovies, error: topRatedError, isLoading: topRatedIsLoading } = useSwr('getTopRatedMovies', getTopRatedMovies);
-  const {data: upcomingMovies, error: upcominError, isLoading: upcominIsLoading } = useSwr('upcominMovies', getUpcomingMovies);
-  const {data: populatTv, error: populatTvError, isLoading: populatTvIsLoading } = useSwr('populatTvs', getPopularTv);
-  const {data: topRatedTvs, error: topRatedTvsError, isLoading: topRatedTvsIsLoading } = useSwr('topRatedTvs', getTopRatedTv);
-  const {data: airingTodaygTv, error: airingTodaygTvError, isLoading: airingTodaygTvIsLoading } = useSwr('airingTodaygTv', getAiringTodaygTv);
+
+      const {data: popularMovies, error: popularMoviesError, isLoading: popularMoviesIsLoading } = useSwr('getPopularMovies', getPopularMovies);
+      const {data: topRatedMovies, error: topRatedError, isLoading: topRatedIsLoading } = useSwr('getTopRatedMovies', getTopRatedMovies);
+      const {data: upcomingMovies, error: upcominError, isLoading: upcominIsLoading } = useSwr('upcominMovies', getUpcomingMovies);
+      const {data: populatTv, error: populatTvError, isLoading: populatTvIsLoading } = useSwr('populatTvs', getPopularTv);
+      const {data: topRatedTvs, error: topRatedTvsError, isLoading: topRatedTvsIsLoading } = useSwr('topRatedTvs', getTopRatedTv);
+      const {data: airingTodaygTv, error: airingTodaygTvError, isLoading: airingTodaygTvIsLoading } = useSwr('airingTodaygTv', getAiringTodaygTv);
 
 
   return (
