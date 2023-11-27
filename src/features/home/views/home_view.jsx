@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from '../../Components/header/Header';
 import Footer from '../../Components/footer/Footer';
-import Sercher from '../../Components/sercher/Sercher';
 import SwiperContainer from '../../Components/appSwiper/swiper_container';
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '../services/movies_services';
 import useSwr from 'swr';
 import { getAiringTodaygTv, getPopularTv, getTopRatedTv } from '../services/tv_services';
 import BannerContainer from '../../Components/banner/banner_container';
-import { getMovieDetails } from '../../movie/services/movie_detail_services';
-import { useParams } from 'react-router-dom';
+import SwiperError from '../../Components/appSwiper/swiper_error';
+import SwiperSkeleton from '../../Components/appSwiper/swiper_skeleton';
+import BannerError from '../../Components/banner/banner_error';
+import BannerSkeleton from '../../Components/banner/banner_skeleton';
+import SwiperAdapter from '../componente/swiper_adapter';
 
 
 
@@ -26,13 +28,18 @@ const HomeView = () => {
   return (
     <div>
       <Header/>
-        {popularMovies ? <BannerContainer data={popularMovies}></BannerContainer> : null}
-        <SwiperContainer title={"MAS POPULARES"} data={popularMovies}/>
-        <SwiperContainer title={"MEJOR RANKEADAS"} data={topRatedMovies}/>
-        <SwiperContainer title={"PROXIMAMENTE"} data={upcomingMovies}/>
-        <SwiperContainer title={"SERIES MAS POPULARES"} data={populatTv}/>
-        <SwiperContainer title={"SERIES MEJOR RANKEADAS"} data={topRatedTvs}/>
-        <SwiperContainer title={"AL AIRE HOY"} data={airingTodaygTv}/>
+        {popularMoviesError ? 
+        <BannerError/> : popularMoviesIsLoading ?
+        <BannerSkeleton/> :
+        <BannerContainer data={popularMovies}></BannerContainer>}
+        {popularMoviesError ? <SwiperError/> : popularMoviesIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"MAS POPULARES"} data={popularMovies}/>}
+        {topRatedError ? <SwiperError/> : topRatedIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"MEJOR RANKEADAS"} data={topRatedMovies}/>}
+        {upcominError ? <SwiperError/> : upcominIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"PROXIMAMENTE"} data={upcomingMovies}/>}
+        {populatTvError ? <SwiperError/> : populatTvIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"SERIES MAS POPULARES"} data={populatTv}/>}
+        {topRatedTvsError ? <SwiperError/> : topRatedTvsIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"SERIES MEJOR RANKEADAS"} data={topRatedTvs}/>}
+        {airingTodaygTvError ? <SwiperError/> : airingTodaygTvIsLoading ? <SwiperSkeleton/> : <SwiperContainer title={"AL AIRE HOY"} data={airingTodaygTv}/>}
+
+
 
         <Footer/>
 
