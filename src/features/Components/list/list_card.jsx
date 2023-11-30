@@ -6,9 +6,9 @@ import useMovieSearch from '../sercher/useMovieSearch'
 const ListCard = ({item}) => {
 
   const navigate = useNavigate()
-  const {search} = useMovieSearch();
 
   const handleClick = () => {
+    navigate("/");
     navigate(`/${item.id}`)
 
   }
