@@ -1,12 +1,17 @@
 import axios from "axios";
 
+const VITE_APP_TMDB_API_KEY = "a332d0824bd2c9d5acc4a1f5f6439682"
+
+const VITE_APP_TMDB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMzMyZDA4MjRiZDJjOWQ1YWNjNGExZjVmNjQzOTY4MiIsInN1YiI6IjY1NGZhZTc1MDgxNmM3MDBjM2Q4YWFiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nmNUbDJd8z0jHgdjPSdHIJLReBbvDoOZwtBoCR5zHiU"
+
+
 export const tmdb_api = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_APP_TMDB_TOKEN || process.env.VITE_APP_TMDB_TOKEN}`
+        Authorization: `Bearer ${VITE_APP_TMDB_TOKEN}`
     },
     params: {
-        api_key: import.meta.env.VITE_APP_TMDB_API_KEY || process.env.VITE_APP_TMDB_API_KEY,
+        api_key: VITE_APP_TMDB_API_KEY,
         language: 'es-ES',
     },
 })
@@ -17,6 +22,7 @@ export const tmdb_paths = {
       top_rated: "/movie/top_rated",
       upcoming: "/movie/upcoming",
       nowPlaying: "/movie/now_playing",
+      search: "/search/movie",
     },
     movie: {
       id: "/movie/"

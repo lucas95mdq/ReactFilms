@@ -2,8 +2,8 @@ import React from 'react'
 
 const SwiperCard = ({title}, ...props ) => {
   return (
-    <div>
-        <h3 {...props}>{title}</h3>
+    <div {...props}>
+        <h3 >{title}</h3>
     </div>
   )
 }

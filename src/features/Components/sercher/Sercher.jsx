@@ -1,20 +1,20 @@
-import React from 'react'
-import AppButton from '../button/AppButton'
+import React, { useState } from 'react'
 
-const Sercher = () => {
-
+const Sercher = ({ onSearch }) => {
+  
     const handleSubmit = (e) => {
         e.preventDefault();
+    }
+
+    const handleChange = (e) => {
+        onSearch(e.target.value)
     }
 
     return (
    
     <div>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='buscar'></input>
-            <AppButton type={"submit"}>
-                Buscar
-            </AppButton>
+            <input type="text" placeholder='buscar' onChange={handleChange}></input>
         </form>
     </div>
   )
